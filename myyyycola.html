@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коля - Легенда нашего времени</title>
+    <style>
+        :root {
+            --primary: #ff5722;
+            --secondary: #607d8b;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --accent: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .name-tag {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .highlight {
+            background-color: var(--accent);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: 50px;
+        }
+        
+        .birthday {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .award {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .award-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 3px solid var(--primary);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Коля</h1>
+            <div class="subtitle">Человек-легенда, филантроп и создатель миров</div>
+            <div class="birthday">Родился: 11 сентября (выпал из самолёта, летящего в башни-близнецы, и приземлился прямо в туалет)</div>
+            
+            <div class="names">
+                <div class="name-tag">myyyycola</div>
+                <div class="name-tag">Mr.Jaba</div>
+                <div class="name-tag">Soska2010</div>
+                <div class="name-tag">Mr Maxim</div>
+                <div class="name-tag">Infinity Cumfter</div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <h2>Биография</h2>
+                <p>Коля — человек необыкновенной судьбы, чья жизнь наполнена удивительными событиями и достижениями.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">11 сентября (точный год засекречен)</div>
+                        <p>Родился, выпав из самолёта, летящего в башни-близнецы, и совершил идеальное приземление в туалет.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">3 года</div>
+                        <p>Сидя на своём Lamborghini и поедая дубайский шоколад, заметил под VR Oculus 4 Pro монетку в 11 копеек и отдал её бездомным.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">1 546 234 год до н.э.</div>
+                        <p>Получил награду <span class="highlight">"Самый Добрый Школьник"</span> за свои благородные поступки.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Наше время</div>
+                        <p>Создал самые не популярные YouTube SMP-серверы <span class="highlight">"Инфинити Майн"</span> и <span class="highlight">"Шелл ЧЕйна"</span>, которые изменили представление о Minecraft.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Достижения</h2>
+                <p>Коля — человек многогранный, чьи достижения охватывают различные сферы деятельности.</p>
+                
+                <div class="award">
+                    <div class="award-icon">🏆</div>
+                    <div>
+                        <h3>Самый Добрый Школьник</h3>
+                        <p>1 546 234 год до нашей эры — за щедрость и бескорыстие</p>
+                    </div>
+                </div>
+                
+                <div class="award">
+                    <div class="award-icon">🎮</div>
+                    <div>
+                        <h3>Создатель культовых SMP-серверов</h3>
+                        <p>"Инфинити Майн" и "Шелл ЧЕйна" — революция в Minecraft-сообществе</p>
+                    </div>
+                </div>
+                
+                <div class="award">
+                    <div class="award-icon">✈️</div>
+                    <div>
+                        <h3>Мастер экстремальных приземлений</h3>
+                        <p>Совершил идеальное приземление в туалет после падения из самолёта</p>
+                    </div>
+                </div>
+                
+                <div class="award">
+                    <div class="award-icon">🏎️</div>
+                    <div>
+                        <h3>Пионер вождения</h3>
+                        <p>Управлял Lamborghini в 3 года, одновременно поедая дубайский шоколад</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Галерея</h2>
+            <p>Фотографии, запечатлевшие моменты жизни этого удивительного человека.</p>
+            
+            <div class="gallery">
+                <img src="https://cdn.discordapp.com/attachments/1030908923080884425/1354953937483993338/image.png?ex=67e924f0&is=67e7d370&hm=416603c08ecc606d0262c8b6a89ca04ea5bdaf31d98b30294a394af37108ff03&" alt="Коля 1">
+                <img src="https://cdn.discordapp.com/attachments/1030908923080884425/1354531828404588838/250.png?ex=67e8ed51&is=67e79bd1&hm=68a2ab6f17260423b9949c9fb2e32c49afbc5a87cdfcb8bd3c8031564248d790&" alt="Коля 2">
+                <img src="https://cdn.discordapp.com/attachments/1030908923080884425/1354530711943774281/B0E725541D55DBAE2426AD7F50F7E14EC020378E.png?ex=67e8ec47&is=67e79ac7&hm=b3bf19cdf5fa0122479327ced5e4876441797de704736d19a250a0425883afe8&" alt="Коля 3">
+                <img src="https://cdn.discordapp.com/attachments/1030908923080884425/1355519084632084510/image.png?ex=67e93906&is=67e7e786&hm=6b57e9eadca24f115e71bb4546cc479653b5b6e14807c795577e12eb0cb3c08d&" alt="Коля 4">
+                <img src="https://cdn.discordapp.com/attachments/1030908923080884425/1355519085093322913/image.png?ex=67e93906&is=67e7e786&hm=7ebc1a33347aaa52c4e71bbece6992acd7ca85ec966523bd77b98bef9edb21ce&" alt="Коля 5">
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Официальный сайт Коли. Все права защищены.</p>
+            <p>Контактная информация: просто крикните "Коля!" три раза перед зеркалом в полночь</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ХАБ - Персонажи</title>
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #f72585;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, #fff, #f5f5f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .character-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .character-name {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .character-alias {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.6);
+            background: #ff0676;
+        }
+        
+        .character-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ПЕРСОНАЖИ</h1>
+            <div class="subtitle">Выберите персонажа, чтобы узнать о нём больше</div>
+        </header>
+        
+        <div class="characters-grid">
+            <!-- Коля -->
+            <div class="character-card">
+                <div class="character-icon">👑</div>
+                <h2 class="character-name">Коля</h2>
+                <div class="character-alias">myyyycola | Mr.Jaba | Soska2010</div>
+                <a href="myyyycola.html" class="btn">Перейти</a>
+            </div>
+            
+            <!-- Пример другого персонажа -->
+            <div class="character-card">
+                <div class="character-icon">🦸</div>
+                <h2 class="character-name">Денис</h2>
+                <div class="character-alias">ДенискаНеВжопкеСосиська | Босс</div>
+                <a href="denis.html" class="btn">Перейти</a>
+            </div>
+            
+            <!-- Ещё один персонаж -->
+            <div class="character-card">
+                <div class="character-icon">🧙</div>
+                <h2 class="character-name">Амешка</h2>
+                <div class="character-alias">АмужЧей | Волшебница</div>
+                <a href="ameshka.html" class="btn">Перейти</a>
+            </div>
+            
+            <!-- Дополнительные карточки можно добавлять по аналогии -->
+            <div class="character-card">
+                <div class="character-icon">🧪</div>
+                <h2 class="character-name">Паштетик</h2>
+                <div class="character-alias">ПаштетикВжопеАмлетик | Черный</div>
+                <a href="pashtet.html" class="btn">Перейти</a>
+            </div>
+            
+            <div class="character-card">
+                <div class="character-icon">🎸</div>
+                <h2 class="character-name">Танжырка</h2>
+                <div class="character-alias">ЖирныйМиирр | Музыкант</div>
+                <a href="tan.html" class="btn">Перейти</a>
+            </div>
+            
+            <div class="character-card">
+                <div class="character-icon">👽</div>
+                <h2 class="character-name">Инопланетянин</h2>
+                <div class="character-alias">Петух | Пришелец</div>
+                <a href="petug.html" class="btn">Перейти</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Персонажный ХАБ. Все не права защищены.</p>
+    </footer>
+</body>
+</html>
