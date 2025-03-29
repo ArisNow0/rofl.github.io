@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артём - Человек Паштет</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #1a0000;
+            color: #ffcccc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Анимации */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff0000; }
+            50% { text-shadow: 0 0 20px #ff3333; }
+            100% { text-shadow: 0 0 5px #ff0000; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Шапка */
+        header {
+            background: linear-gradient(to right, #400000, #800000);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #ff3333;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: glow 2s infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9999;
+        }
+        
+        /* Основной контент */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: #330000;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #ff3333;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        section:hover {
+            transform: scale(1.02);
+        }
+        
+        h2 {
+            color: #ff6666;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 2px dashed #ff3333;
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Галерея */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #ff3333;
+            transition: all 0.3s;
+            animation: float 4s infinite;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff3333;
+        }
+        
+        /* Факты */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .fact-card {
+            background-color: #400000;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #ff6666;
+        }
+        
+        .fact-card h3 {
+            color: #ff9999;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #800000, #400000);
+            margin-top: 2rem;
+            border-top: 3px solid #ff3333;
+        }
+        
+        .age-counter {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            animation: glow 1.5s infinite;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Артём - Человек Паштет</h1>
+        <div class="subtitle">Радиоактивная легенда нашего времени</div>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>Кто такой Артём?</h2>
+            <p>Артём — не обычный человек. Его история началась в далёком детстве, когда он совершил роковую ошибку — съел радиоактивный паштет из свиньви. С этого момента его жизнь изменилась навсегда, и он стал тем, кого мы теперь знаем как Человека Паштета!</p>
+            <p>Сейчас Артёму всего 23 секунды (хотя технически он прожил уже 95 лет), и он продолжает удивлять мир своими невероятными способностями и достижениями.</p>
+            
+            <div class="gallery">
+                <img src="https://i.ibb.co/67WQLd1x/2025-03-29-145355748.png" alt="Артём - фото 1">
+                <img src="https://i.ibb.co/zTvv1q65/2025-03-29-145321140.png" alt="Артём - фото 2">
+                <img src="https://i.ibb.co/5gfSVnrD/2025-03-29-145418063.png" alt="Артём - фото 3">
+            </div>
+        </section>
+        
+        <section>
+            <h2>Невероятные факты</h2>
+            <div class="facts">
+                <div class="fact-card">
+                    <h3>Детство с паштетом</h3>
+                    <p>В детстве Артём съел радиоактивный паштет из свиньви, что превратило его в Человека Паштета. С тех пор он обладает невероятными способностями, которые наука не может объяснить.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <h3>Роблокс-легенда</h3>
+                    <p>В возрасте 3 лет Артём прошёл все режимы в Роблоксе просто от скуки. Его навыки в виртуальных мирах до сих пор не превзойдены.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <h3>Сексуальная ориентация</h3>
+                    <p>Артём точно не гей. Когда Коля сидел у него на коленях, у Артёма ничего не встало. Хотя... мы не совсем в этом уверены.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <h3>Путешественник во времени</h3>
+                    <p>В возрасте 95 лет Артём служил в Донбассе, после чего создал машину времени и вернулся в молодость. Теперь ему всего 23 секунды, и он готов покорять мир заново.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Сверхспособности</h2>
+            <p>Благодаря радиоактивному паштету, Артём обладает множеством необычных способностей:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Может пройти любую видеоигру за рекордное время</li>
+                <li>Обладает иммунитетом к свиному паштету</li>
+                <li>Способен путешествовать во времени (но только один раз)</li>
+                <li>Может сидеть с Колей на коленях без последствий</li>
+                <li>Имеет невероятную харизму и обаяние</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="age-counter">Текущий возраст Артёма: <span id="age">23</span> секунды</div>
+        <p>© 2025 Человек Паштет. Все права защищены, особенно на паштет.</p>
+    </footer>
+    
+    <script>
+        // Анимация счётчика возраста
+        let ageElement = document.getElementById('age');
+        let seconds = 23;
+        
+        setInterval(() => {
+            seconds++;
+            ageElement.textContent = seconds;
+            
+            if (seconds === 95) {
+                ageElement.textContent = "95 (время для машины времени!)";
+                setTimeout(() => {
+                    seconds = 0;
+                    ageElement.textContent = "0";
+                }, 2000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
