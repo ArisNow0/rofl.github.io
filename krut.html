@@ -608,7 +608,7 @@
             <div class="member">
                 <img src="https://i.ibb.co/N2BrfQwb/2025-04-02-150451492.png" alt="Хойщик">
                 <h3>⚡ ХОЙЩИК ⚡</h3>
-                <p>ЭНЕРГИЯ И НАПОР 😎 Главный по разборкам и выяснениям отношений. Мастер стратегии и тактики школьного террора. 😎💪🔥</p>
+                <p>ЭНЕРГИЯ И НАПОР 😎 Благодаря военному мастерству может предугадывать будущее. Мастер стратегии и тактики школьного террора. 😎💪🔥</p>
                 <p>💥 Специализация: Физическое воздействие и тактика</p>
             </div>
             
@@ -753,4 +753,133 @@
                 emoji.classList.add('emoji-rain');
                 emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 emoji.style.left = Math.random() * window.innerWidth + 'px';
-                emoji.style.animationDuration = (Math.random() *
+                emoji.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                emoji.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                emoji.style.color = getRandomColor();
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => {
+                    emoji.remove();
+                }, 8000);
+            }
+            
+            setInterval(createEmojiRain, 200);
+            
+            // Случайные вспышки на странице
+            setInterval(() => {
+                const flash = document.createElement('div');
+                flash.style.position = 'fixed';
+                flash.style.top = '0';
+                flash.style.left = '0';
+                flash.style.width = '100%';
+                flash.style.height = '100%';
+                flash.style.background = `radial-gradient(circle at ${Math.random() * 100}% ${Math.random() * 100}%, ${getRandomColor(0.5)}, transparent)`;
+                flash.style.pointerEvents = 'none';
+                flash.style.zIndex = '9997';
+                flash.style.transition = 'opacity 1.5s';
+                document.body.appendChild(flash);
+                
+                setTimeout(() => {
+                    flash.style.opacity = '0';
+                }, 100);
+                
+                setTimeout(() => {
+                    flash.remove();
+                }, 1600);
+            }, 2000);
+            
+            // Вращающиеся элементы при наведении
+            document.querySelectorAll('.member img').forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    this.style.animation = 'spin 3s linear infinite';
+                    createExplosion(this);
+                });
+                
+                img.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                });
+            });
+            
+            // Эффект взрыва
+            function createExplosion(element) {
+                const rect = element.getBoundingClientRect();
+                const x = rect.left + rect.width / 2;
+                const y = rect.top + rect.height / 2;
+                
+                const explosion = document.createElement('div');
+                explosion.classList.add('explosion');
+                explosion.style.left = x + 'px';
+                explosion.style.top = y + 'px';
+                explosion.style.background = `radial-gradient(circle, ${getRandomColor(0.8)}, ${getRandomColor(0.5)})`;
+                document.body.appendChild(explosion);
+                
+                setTimeout(() => {
+                    explosion.remove();
+                }, 1000);
+            }
+            
+            // Случайное изменение цвета заголовка
+            const h1 = document.querySelector('h1');
+            setInterval(() => {
+                h1.style.background = `linear-gradient(to right, ${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+                h1.style.webkitBackgroundClip = 'text';
+                h1.style.backgroundClip = 'text';
+            }, 2000);
+            
+            // Функция для получения случайного цвета
+            function getRandomColor(alpha = 1) {
+                const hue = Math.floor(Math.random() * 360);
+                return `hsla(${hue}, 100%, 50%, ${alpha})`;
+            }
+            
+            // Кнопка супер-крутости
+            const superButton = document.getElementById('superButton');
+            superButton.addEventListener('click', function() {
+                // Анимация кнопки
+                this.style.animation = 'none';
+                this.style.transform = 'scale(1.2) rotate(10deg)';
+                this.style.boxShadow = '0 0 80px rgba(255, 0, 0, 0.9)';
+                
+                // Создаем мега-взрыв
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const explosion = document.createElement('div');
+                        explosion.classList.add('explosion');
+                        explosion.style.left = Math.random() * window.innerWidth + 'px';
+                        explosion.style.top = Math.random() * window.innerHeight + 'px';
+                        explosion.style.background = `radial-gradient(circle, ${getRandomColor(0.9)}, ${getRandomColor(0.6)})`;
+                        explosion.style.width = (Math.random() * 200 + 100) + 'px';
+                        explosion.style.height = (Math.random() * 200 + 100) + 'px';
+                        document.body.appendChild(explosion);
+                        
+                        setTimeout(() => {
+                            explosion.remove();
+                        }, 1000);
+                    }, i * 50);
+                }
+                
+                // Меняем текст кнопки
+                this.textContent = 'КРУТОСТЬ АКТИВИРОВАНА! 😎💥';
+                
+                // Добавляем дождь из эмодзи
+                const emojiInterval = setInterval(createEmojiRain, 50);
+                
+                // Возвращаем кнопку в исходное состояние через 3 секунды
+                setTimeout(() => {
+                    this.style.animation = 'pulse 2s infinite, rainbow-border 5s infinite';
+                    this.style.transform = '';
+                    this.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.7)';
+                    this.textContent = 'АКТИВИРОВАТЬ ЕЩЕ БОЛЬШЕ КРУТОСТИ 😎💥';
+                    clearInterval(emojiInterval);
+                }, 3000);
+            });
+            
+            // Ресайз canvas при изменении размера окна
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
+</body>
+</html>
