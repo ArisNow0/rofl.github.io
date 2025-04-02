@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥😎 ПУБЕРТАНИКИ ШКОЛЫ - УЛЬТРА КРУТОЙ САЙТ 😎🔥</title>
+    <style>
+        /* Глобальные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.2) 0%, transparent 20%),
+                linear-gradient(to bottom right, #000000, #1a1a2e, #000033);
+            background-attachment: fixed;
+        }
+        
+        /* Анимации */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+            50% { text-shadow: 0 0 30px #00ff00, 0 0 50px #00ff00; }
+            100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+        }
+        
+        @keyframes mega-glow {
+            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff00ff, 0 0 30px #00ffff; }
+            50% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff00ff, 0 0 90px #00ffff; }
+            100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff00ff, 0 0 30px #00ffff; }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes spin-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: lime; }
+            57% { color: cyan; }
+            71% { color: blue; }
+            85% { color: magenta; }
+            100% { color: red; }
+        }
+        
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg) translateX(-100%); }
+            100% { transform: rotate(360deg) translateX(100%); }
+        }
+        
+        /* Основные элементы */
+        header {
+            background: linear-gradient(to right, #000000, #222222, #444444, #222222, #000000);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 10px solid transparent;
+            border-image: linear-gradient(to right, #00ff00, #ff00ff, #00ffff, #ff00ff, #00ff00);
+            border-image-slice: 1;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2300ff00" stroke-width="2" stroke-dasharray="5,5" /></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23ff00ff" stroke-width="2" stroke-dasharray="3,7" /></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+            animation: shine 10s linear infinite;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            animation: mega-glow 3s infinite, rainbow 5s infinite, pulse 2s infinite;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(to right, #00ff00, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+        }
+        
+        .tagline {
+            font-size: 2rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+            margin-bottom: 30px;
+            animation: glow 2s infinite alternate;
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 3rem;
+            animation: float 3s infinite, pulse 1s infinite;
+            display: inline-block;
+            margin: 0 10px;
+            text-shadow: 0 0 15px currentColor;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 5px solid transparent;
+            border-image: linear-gradient(45deg, #00ff00, #ff00ff, #00ffff, #ff00ff, #00ff00);
+            border-image-slice: 1;
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse 4s infinite;
+        }
+        
+        .gang-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 60px 0;
+            perspective: 1000px;
+        }
+        
+        .member {
+            background: rgba(0, 0, 0, 0.8);
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #00ff00, #00ffff, #ff00ff);
+            border-image-slice: 1;
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            text-align: center;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        
+        .member:hover {
+            transform: scale(1.1) rotateY(10deg) rotateX(5deg);
+            box-shadow: 0 0 50px #00ff00;
+            z-index: 10;
+        }
+        
+        .member::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent, transparent, transparent,
+                rgba(0, 255, 0, 0.2), transparent, transparent, transparent
+            );
+            transform: rotate(30deg);
+            animation: shine 5s infinite;
+        }
+        
+        .member::after {
+            content: "😎";
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 8rem;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+            border-image-slice: 1;
+            margin-bottom: 20px;
+            transition: all 0.5s;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+        }
+        
+        .member:hover img {
+            border-image: linear-gradient(45deg, #ffff00, #ff0000, #ffff00);
+            box-shadow: 0 0 40px #ffff00;
+            animation: spin 5s linear infinite;
+        }
+        
+        .member h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .member p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+        
+        .about {
+            background: rgba(0, 0, 0, 0.8);
+            border: 5px solid;
+            border-image: linear-gradient(to right, #ff00ff, #00ffff, #ffff00);
+            border-image-slice: 1;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.3);
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+        }
+        
+        .about:hover {
+            transform: scale(1.02) rotateY(5deg);
+            box-shadow: 0 0 80px rgba(255, 0, 255, 0.7);
+        }
+        
+        .about::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23ff00ff" stroke-width="3" stroke-dasharray="15,10" /></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .about h2 {
+            font-size: 3rem;
+            background: linear-gradient(to right, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 3s infinite;
+        }
+        
+        .about p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .fact {
+            background: rgba(0, 0, 0, 0.8);
+            border: 5px solid;
+            border-image: linear-gradient(to right, #ffff00, #ff0000);
+            border-image-slice: 1;
+            border-radius: 20px;
+            padding: 30px;
+            width: calc(50% - 30px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s;
+            box-shadow: 0 0 40px rgba(255, 255, 0, 0.3);
+        }
+        
+        .fact:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255, 255, 0, 0.7);
+        }
+        
+        .fact::before {
+            content: "😎";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 3rem;
+            opacity: 0.2;
+            animation: spin 20s linear infinite;
+        }
+        
+        .fact h3 {
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #ffff00, #ff8800);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .fact p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: #ffffff;
+        }
+        
+        .warning {
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            font-weight: bold;
+            animation: shake 0.5s infinite alternate, glow 0.5s infinite alternate;
+            font-size: 1.5rem !important;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #000000, #222222, #444444, #222222, #000000);
+            padding: 30px;
+            text-align: center;
+            border-top: 10px solid transparent;
+            border-image: linear-gradient(to right, #00ff00, #ff00ff, #00ffff, #ff00ff, #00ff00);
+            border-image-slice: 1;
+            margin-top: 60px;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2300ffff" stroke-width="2" stroke-dasharray="10,5" /></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        footer p {
+            font-size: 1.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            margin-bottom: 15px;
+        }
+        
+        /* Эффекты для максимальной крутости 😎 */
+        .cursor-trail {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.8), rgba(0, 255, 255, 0));
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(1);
+            mix-blend-mode: screen;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+        
+        .emoji-rain {
+            position: fixed;
+            top: -50px;
+            animation: fall linear;
+            font-size: 28px;
+            pointer-events: none;
+            z-index: 9998;
+            text-shadow: 0 0 10px currentColor;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .explosion {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            pointer-events: none;
+            z-index: 9997;
+            background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 0, 0, 0));
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 1;
+            animation: explode 1s forwards;
+        }
+        
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        /* Кнопка супер-крутости */
+        .super-button {
+            display: block;
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ffff, #00ff00);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            animation: pulse 2s infinite, rainbow-border 5s infinite;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+            transition: all 0.3s;
+            z-index: 1;
+        }
+        
+        .super-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.9);
+            animation: pulse 0.5s infinite, rainbow-border 2s infinite;
+        }
+        
+        .super-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent, transparent, transparent,
+                rgba(255, 255, 255, 0.3), transparent, transparent, transparent
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes rainbow-border {
+            0% { border: 5px solid red; }
+            14% { border: 5px solid orange; }
+            28% { border: 5px solid yellow; }
+            42% { border: 5px solid lime; }
+            57% { border: 5px solid cyan; }
+            71% { border: 5px solid blue; }
+            85% { border: 5px solid magenta; }
+            100% { border: 5px solid red; }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .fact {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+            
+            .member {
+                width: 100%;
+            }
+            
+            .about, .fact {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .emoji {
+                font-size: 2rem;
+            }
+            
+            .member img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .super-button {
+                width: 100%;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔥😎 ПУБЕРТАНИКИ ШКОЛЫ 😎🔥</h1>
+        <div class="tagline">САМАЯ ОПАСНАЯ БАНДА В ШКОЛЕ | МЫ ПРИХОДИМ И УХОДИМ КРУТО 😎😎😎</div>
+        <div>
+            <span class="emoji" style="color: #00ff00;">😎</span>
+            <span class="emoji" style="color: #ff00ff; animation-delay: 0.3s;">💀</span>
+            <span class="emoji" style="color: #ffff00; animation-delay: 0.6s;">🔥</span>
+            <span class="emoji" style="color: #00ffff; animation-delay: 0.9s;">🚬</span>
+            <span class="emoji" style="color: #ff0000; animation-delay: 1.2s;">👑</span>
+            <span class="emoji" style="color: #ff00ff; animation-delay: 1.5s;">🤘</span>
+            <span class="emoji" style="color: #00ff00; animation-delay: 1.8s;">😈</span>
+            <span class="emoji" style="color: #ffff00; animation-delay: 2.1s;">💣</span>
+        </div>
+    </header>
+    
+    <div class="container">
+        <button class="super-button" id="superButton">АКТИВИРОВАТЬ КРУТОСТЬ 😎💥</button>
+        
+        <div class="gang-members">
+            <div class="member">
+                <img src="https://i.ibb.co/vxvBCcsN/2025-04-02-150316635.png" alt="Процессор">
+                <h3>🔥 ПРОЦЕССОР 🔥</h3>
+                <p>МОЗГ БАНДЫ 😎 Всегда знает, когда лучше прийти и уйти. Он настолько крут что даже этот ультра-мега-крутой сайт создал сам. 😎💻🔥</p>
+                <p>💥 Специализация: Крутые идеи и взлом системы</p>
+            </div>
+            
+            <div class="member">
+                <img src="https://i.ibb.co/xvYsyLq/2025-04-02-150049699.png" alt="Фембойчик">
+                <h3>💅 ФЕМБОЙЧИК 💅</h3>
+                <p>СТИЛЬ И ХАРИЗМА 😎 Заводит полезные знакомства и знает все школьные сплетни. Оружие - обаяние и ультра-крутой стиль. 😎✨👑</p>
+                <p>💥 Специализация: Психологические атаки и модные тренды</p>
+            </div>
+            
+            <div class="member">
+                <img src="https://i.ibb.co/N2BrfQwb/2025-04-02-150451492.png" alt="Хойщик">
+                <h3>⚡ ХОЙЩИК ⚡</h3>
+                <p>ЭНЕРГИЯ И НАПОР 😎 Главный по разборкам и выяснениям отношений. Мастер стратегии и тактики школьного террора. 😎💪🔥</p>
+                <p>💥 Специализация: Физическое воздействие и тактика</p>
+            </div>
+            
+            <div class="member">
+                <img src="https://i.ibb.co/fTsY4pJ/image.png" alt="Артем">
+                <h3>👻 АРТЕМ 👻</h3>
+                <p>ТЕМНАЯ ЛОШАДКА БАНДЫ 😎 Молчалив, но опасен. Появляется неожиданно и исчезает бесследно. Никто не знает его истинных возможностей. 😎👀💀</p>
+                <p>💥 Специализация: Скрытность и неожиданные действия</p>
+            </div>
+        </div>
+        
+        <div class="about">
+            <h2>😎💥 О НАШЕЙ УЛЬТРА-КРУТОЙ БАНДЕ 💥😎</h2>
+            <p>Мы - "Пубертаники школы", самая опасная и крутая банда в учебном заведении и за его пределами. 😎 Наш девиз: "Пришли, увидели, ушли, оставив всех в шоке". 💥 Мы держим в страхе всю школу, и даже директор боится сделать нам замечание. 👑</p>
+            <p>💀 Наша банда образовалась в далеком 2024 году, когда четверо самых отчаянных школьников объединились против системы. С тех пор мы - непобедимая сила, с которой никто не может справиться. 💪</p>
+            <p>🔥 Наши методы просты, но эффективны: мы приходим в школу, создаем атмосферу всеобщего ужаса и восхищения, а затем гордо удаляемся, оставляя после себя легенды, слухи и пару сломанных сердец. 😎💔</p>
+            <p>🚀 Мы не просто банда - мы стиль жизни. Мы не просто школьники - мы легенда. Мы не просто пубертаники - мы будущее этой школы. 😎👊</p>
+        </div>
+        
+        <div class="facts">
+            <div class="fact">
+                <h3>🔥 НАШИ УЛЬТРА-КРУТЫЕ ДОСТИЖЕНИЯ 🔥</h3>
+                <p>😎 - Держим в страхе всех детей СВО и не только</p>
+                <p>😎 - Учителя ставят нам хорошие оценки просто так, чтобы мы не злились</p>
+                <p>😎 - Мы единственные, кто может опаздывать на уроки без последствий</p>
+                <p>😎 - Наш авторитет признан даже старшеклассниками и учителями физкультуры</p>
+                <p>😎 - Мы приходим и уходим, когда захотим, и никто не смеет нам перечить</p>
+                <p>😎 - Мы создали самый крутой сайт в истории школьных банд</p>
+                <p>😎 - Нас боятся даже местные гопники</p>
+            </div>
+            
+            <div class="fact">
+                <h3>💀 УЛЬТИМАТИВНОЕ ПРЕДУПРЕЖДЕНИЕ 💀</h3>
+                <p class="warning">ВНИМАНИЕ! ⚠️ Если вы увидели нас в школе - немедленно покиньте помещение! 🏃‍♂️💨 Мы не несем ответственности за ваши испуганные крики, потерю сознания или внезапное желание стать круче. 😎</p>
+                <p>🔥 Мы не ищем неприятностей, но если неприятности ищут нас - они их найдут. В полном объеме. Со всеми вытекающими. И с анимацией. 💥</p>
+                <p>👑 Помните: лучше один раз увидеть "Пубертаников", чем сто раз услышать наши легендарные истории и жалеть, что не видели нас лично. 😎</p>
+                <p>💀 Не пытайтесь повторить это дома. Мы профессионалы экстремальной крутости. 😎🔥</p>
+            </div>
+        </div>
+        
+        <div class="about">
+            <h2>😎💥 НАШИ УЛЬТРА-КРУТЫЕ ПРИНЦИПЫ 💥😎</h2>
+            <p>1. 😎 Быть крутым - это не привилегия, это обязанность</p>
+            <p>2. 💀 Если ты не пубертаник - ты никто</p>
+            <p>3. 🔥 Мы приходим, когда хотим, и уходим, когда захотим</p>
+            <p>4. 👑 Наша крутость не имеет границ и ограничений</p>
+            <p>5. 🚬 Мы не курим - мы создаем дымовую завесу крутости</p>
+            <p>6. 💥 Мы не нарушаем правила - мы создаем свои</p>
+            <p>7. 😈 Если ты против нас - ты уже проиграл</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 1986-2025 😎 Официальный ультра-мега-крутой сайт банды "Пубертаники школы" 😎</p>
+        <p>💥 Все права защищены. Копирование материалов запрещено под угрозой нашего ультимативного гнева. 💀</p>
+        <p>🔥 Сайт создан с максимальной крутостью и минимальным уважением к веб-стандартам 😎💻</p>
+    </footer>
+    
+    <canvas id="matrixRain" class="matrix-rain"></canvas>
+    
+    <script>
+        // УЛЬТРА-МЕГА-КРУТЫЕ ЭФФЕКТЫ 😎💥
+        
+        // Матричный дождь
+        const canvas = document.getElementById('matrixRain');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const symbols = '😎💀🔥🚬👑😈🤘💣💥👻✨💅⚡👊💔💨💢';
+        
+        const alphabet = katakana + latin + nums + symbols;
+        
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        
+        const rainDrops = [];
+        
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+        
+        const drawMatrix = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff00';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        setInterval(drawMatrix, 30);
+        
+        // Эффект следа за курсором
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursorTrail = document.createElement('div');
+            cursorTrail.classList.add('cursor-trail');
+            document.body.appendChild(cursorTrail);
+            
+            document.addEventListener('mousemove', function(e) {
+                cursorTrail.style.left = e.pageX + 'px';
+                cursorTrail.style.top = e.pageY + 'px';
+                cursorTrail.style.transform = `translate(-50%, -50%) scale(${1 + Math.random() * 2})`;
+                cursorTrail.style.background = `radial-gradient(circle, ${getRandomColor()}, transparent)`;
+                
+                // Создаем дополнительные следы с задержкой
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const trail = document.createElement('div');
+                        trail.classList.add('cursor-trail');
+                        trail.style.left = e.pageX + (Math.random() * 40 - 20) + 'px';
+                        trail.style.top = e.pageY + (Math.random() * 40 - 20) + 'px';
+                        trail.style.transform = `translate(-50%, -50%) scale(${0.5 + Math.random()})`;
+                        trail.style.background = `radial-gradient(circle, ${getRandomColor(0.7)}, transparent)`;
+                        trail.style.opacity = 0.7 - i*0.1;
+                        document.body.appendChild(trail);
+                        
+                        setTimeout(() => {
+                            trail.remove();
+                        }, 500);
+                    }, i * 50);
+                }
+            });
+            
+            // Дождь из эмодзи
+            function createEmojiRain() {
+                const emojis = ['😎', '💀', '🔥', '🚬', '👑', '😈', '🤘', '💣', '💥', '👻', '✨', '💅', '⚡', '👊', '💔', '💨'];
+                const emoji = document.createElement('div');
+                emoji.classList.add('emoji-rain');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * window.innerWidth + 'px';
+                emoji.style.animationDuration = (Math.random() *
